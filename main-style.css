@@ -1,17 +1,38 @@
+html, body {
+  margin: 0;
+}
+
+body {
+  background-image: url('img/background.jpg');
+  background-color: #404040;
+  font-family: 'Open Sans', sans-serif;
+}
+
+#bodyIn {
+  width: 100%;
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+}
 
 .game {
+  background-color: #f0f0e0;
   width: 1000px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .lewy {
-  width: 500px;
+  width: 480px;
+  padding: 10px;
   float: left;
 }
 
 .prawy {
-  width: 500px;
+  width: 480px;
+  padding: 10px;
   float: left;
 }
 
@@ -20,4 +41,23 @@
   background-image: url('img/128px-Block_Lava_Generator.png');
   width: 128px;
   height: 128px;
+}
+
+
+#infobox{
+    text-align: center;
+    padding: .7em;
+    position: absolute;
+    background-color: #f44336;
+    color: #fff;
+    width: auto;
+    top: 2%;
+    left: 46%;
+    display: none;
+    font-size: 1.2em;
+    box-shadow:0 4px 10px 0 rgba(0,0,0,0.36),0 2px 10px 0 rgba(0,0,0,0.24);
+}
+
+.infoboxblink{
+    display: block !important;
 }
