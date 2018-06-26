@@ -4,7 +4,7 @@ Prosta gra napisana w JAVASCRIPT HTML i CSS
 
 ## DEMO:
 
-Niedługo będzie dostępne na mojej stronie: [http://jwyszynski.pl/](http://jwyszynski.pl/)
+Wypróbować można na mojej stronie:  [http://jwyszynski.pl/energy-clicker/](http://jwyszynski.pl/energy-clicker/)
 
 ## O czym to?
 

@@ -23,7 +23,7 @@ function klik() {
 }
 
 function addPerSec() {
-  perSec = malyGeneratorWodny+malyGeneratorWiatrowy;
+  perSec = malyGeneratorWodny+malyGeneratorWiatrowy*10;
   energia += perSec;
 }
 
