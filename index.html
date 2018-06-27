@@ -18,10 +18,13 @@
         <h2>Generator</h2>
       </div>
 
-      Zakręć Korbą generatora by otrzymać Energię<br />
-      Twoja energia: <span class="energia">0</span> Wh<br/>
-      (+<span id="perClick">1</span> na klik) (+<span id="perSec">0</span> na sekundę)<br />
-      <button class="generator" onclick="klik()"></button><br>
+      <div class="divEnergia">
+        <h2><b><span class="energia">0</span></b> Wh</h2>
+      </div>
+      (+<span id="perClick">1</span> na klik) (+<span id="perSec">0</span> na sekundę)<br /><br>
+      <div class="generator2">
+        <button title="Zakręć Korbą generatora by otrzymać Energię" class="generator" onclick="klik()"></button><br>
+      </div>
 
       <!-- NOTE: Ulepszenia, generator ręczny -->
 
@@ -54,23 +57,34 @@
 
       <div class="top">
         <h2>Ulepszenia</h2>
-      </div>
+      </div><br>
 
 
       <!-- NOTE: Ulepszenia, elektrownia -->
 
       <button type="button" name="button" onClick="kupMalyGenWodny()">
-        Mały generator wodny(koszt
-        <span id="kosztMalyGenWod">10</span>
-        Wh):
-        <span id="iloscGenWod">0</span>
+        Turbina wiatrowa: <span id="iloscGenWod">0</span><br>
+        Koszt: <span id="kosztMalyGenWod">10</span> Wh
       </button><br><br>
 
       <button type="button" name="button" onClick="kupMalyGenWiatrowy()">
-        Mały generator wiatrowy(koszt
-        <span id="kosztMalyGenWiat">100</span>
-        Wh):
-        <span id="iloscGenWiat">0</span>
+        Panele słoneczne: <span id="iloscGenWiat">0</span><br>
+        Koszt: <span id="kosztMalyGenWiat">100</span> Wh
+      </button><br><br>
+
+      <button type="button" name="button" onClick="kupGenWegiel()">
+        Generator na węgiel: <span id="iloscGenWegiel">0</span><br>
+        Koszt: <span id="kosztGenWegiel">100</span> Wh
+      </button><br><br>
+
+      <button type="button" name="button" onClick="kupZapora()">
+        Generator wodny przy zaporze: <span id="iloscZapora">0</span><br>
+        Koszt: <span id="kosztZapora">100</span> Wh
+      </button><br><br>
+
+      <button type="button" name="button" onClick="kupAtom()">
+        Reaktor atomowy: <span id="iloscAtom">0</span><br>
+        Koszt: <span id="kosztAtom">100</span> Wh
       </button><br><br>
 
     </div>

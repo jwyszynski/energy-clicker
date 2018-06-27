@@ -40,12 +40,16 @@ h2 {
   border: 1px solid #333;
   float: left;
   height: 600px;
+}
 
+.divEnergia {
+  width: 100%;
+  background-color: #FFE328;
 }
 
 .srodkowy {
-  width: 320px;
-  padding: 5px 8px;
+  width: 326px;
+  padding: 5px 5px;
   border: 1px solid #333;
   border-style: solid none solid none;
   float: left;
@@ -67,11 +71,24 @@ h2 {
   height: 600px;
 }
 
+.prawy > button {
+  width: 100%;
+  min-height: 50px;
+}
+
 
 .generator {
   background-image: url('img/128px-Block_Lava_Generator.png');
   width: 128px;
   height: 128px;
+
+}
+
+.generator2 {
+  height: 128px;
+  width: 128px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 
