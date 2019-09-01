@@ -154,3 +154,10 @@ h2 {
 .infoboxblink {
   display: block !important;
 }
+
+.app-version {
+  color: rgba(228, 228, 228, 0.548);
+  bottom: 5px;
+  left: 5px;
+  position: fixed;
+}
