@@ -21,44 +21,45 @@ let kosztGenWegiel = 800;
 let kosztZapora = 2000;
 let kosztAtom = 40000;
 
-
 function klik() {
-
   energia += perClick;
   console.log(`Obecna energia: ${energia}`);
-
 }
 
 function addPerSec() {
-  perSec = malyGeneratorWodny+malyGeneratorWiatrowy*10+genWegiel*80+zapora*200+atom*4000;
+  perSec =
+    malyGeneratorWodny +
+    malyGeneratorWiatrowy * 10 +
+    genWegiel * 80 +
+    zapora * 200 +
+    atom * 4000;
   energia += perSec;
 }
 
 function odswiez() {
   //ODSWIEŻANIE WARTOŚCI NA INTERFEJSIE GRAFICZNYM
-  document.querySelector('.energia').innerHTML = energia;
+  document.querySelector(".energia").innerHTML = energia;
 
-  document.querySelector('#iloscKorb').innerHTML = lepszaKorba;
-  document.querySelector('#iloscGen').innerHTML = lepszyGen;
-  document.querySelector('#iloscGenWod').innerHTML = malyGeneratorWodny;
-  document.querySelector('#iloscGenWiat').innerHTML = malyGeneratorWiatrowy;
-  document.querySelector('#iloscGenWegiel').innerHTML = genWegiel;
-  document.querySelector('#iloscZapora').innerHTML = zapora;
-  document.querySelector('#iloscAtom').innerHTML = atom;
+  document.querySelector("#iloscKorb").innerHTML = lepszaKorba;
+  document.querySelector("#iloscGen").innerHTML = lepszyGen;
+  document.querySelector("#iloscGenWod").innerHTML = malyGeneratorWodny;
+  document.querySelector("#iloscGenWiat").innerHTML = malyGeneratorWiatrowy;
+  document.querySelector("#iloscGenWegiel").innerHTML = genWegiel;
+  document.querySelector("#iloscZapora").innerHTML = zapora;
+  document.querySelector("#iloscAtom").innerHTML = atom;
 
-  document.querySelector('#perClick').innerHTML = perClick;
+  document.querySelector("#perClick").innerHTML = perClick;
 
-  document.querySelector('#iloscKosztKorby').innerHTML = kosztKorby;
-  document.querySelector('#kosztGen').innerHTML = kosztGen;
-  document.querySelector('#kosztMalyGenWod').innerHTML = kosztMalyGenWod;
-  document.querySelector('#kosztMalyGenWiat').innerHTML = kosztMalyGenWiat;
-  document.querySelector('#kosztGenWegiel').innerHTML = kosztGenWegiel;
-  document.querySelector('#kosztZapora').innerHTML = kosztZapora;
-  document.querySelector('#kosztAtom').innerHTML = kosztAtom;
+  document.querySelector("#iloscKosztKorby").innerHTML = kosztKorby;
+  document.querySelector("#kosztGen").innerHTML = kosztGen;
+  document.querySelector("#kosztMalyGenWod").innerHTML = kosztMalyGenWod;
+  document.querySelector("#kosztMalyGenWiat").innerHTML = kosztMalyGenWiat;
+  document.querySelector("#kosztGenWegiel").innerHTML = kosztGenWegiel;
+  document.querySelector("#kosztZapora").innerHTML = kosztZapora;
+  document.querySelector("#kosztAtom").innerHTML = kosztAtom;
 
-  document.querySelector('#perSec').innerHTML = perSec;
-  perClick = 1+lepszaKorba+(lepszyGen*10);
-
+  document.querySelector("#perSec").innerHTML = perSec;
+  perClick = 1 + lepszaKorba + lepszyGen * 10;
 }
 //
 // ULEPSZENIA
@@ -81,7 +82,7 @@ function kupLepszaKorba() {
     energia -= kosztKorby;
     lepszaKorba += 1;
     console.log(`Lepsza Korba: ${lepszaKorba}`);
-    kosztKorby = (lepszaKorba+1)*10;
+    kosztKorby = (lepszaKorba + 1) * 10;
   }
 }
 
@@ -91,7 +92,7 @@ function kupLepszyGen() {
     energia -= kosztGen;
     lepszyGen += 1;
     console.log(`Lepszy Gen: ${lepszyGen}`);
-    kosztGen = (lepszyGen+1)*100;
+    kosztGen = (lepszyGen + 1) * 100;
   }
 }
 
@@ -101,7 +102,7 @@ function kupMalyGenWodny() {
     energia -= kosztMalyGenWod;
     malyGeneratorWodny += 1;
     console.log(`Mały Generator Wodny: ${malyGeneratorWodny}`);
-    kosztMalyGenWod = (malyGeneratorWodny+1)*10;
+    kosztMalyGenWod = (malyGeneratorWodny + 1) * 10;
   }
 }
 
@@ -111,7 +112,7 @@ function kupMalyGenWiatrowy() {
     energia -= kosztMalyGenWiat;
     malyGeneratorWiatrowy += 1;
     console.log(`Lepszy Gen: ${malyGeneratorWiatrowy}`);
-    kosztMalyGenWiat = (malyGeneratorWiatrowy+1)*100;
+    kosztMalyGenWiat = (malyGeneratorWiatrowy + 1) * 100;
   }
 }
 
@@ -121,7 +122,7 @@ function kupGenWegiel() {
     energia -= kosztGenWegiel;
     genWegiel += 1;
     console.log(`Lepszy Gen: ${genWegiel}`);
-    kosztGenWegiel = (genWegiel+1)*800;
+    kosztGenWegiel = (genWegiel + 1) * 800;
   }
 }
 
@@ -131,7 +132,7 @@ function kupZapora() {
     energia -= kosztZapora;
     zapora += 1;
     console.log(`Lepszy Gen: ${zapora}`);
-    kosztZapora = (zapora+1)*2000;
+    kosztZapora = (zapora + 1) * 2000;
   }
 }
 
@@ -141,10 +142,9 @@ function kupAtom() {
     energia -= kosztAtom;
     atom += 1;
     console.log(`Lepszy Gen: ${atom}`);
-    kosztAtom = (atom+1)*40000;
+    kosztAtom = (atom + 1) * 40000;
   }
 }
-
 
 // WYWOŁYWANE FUNKCJE
 
@@ -154,29 +154,41 @@ setInterval(addPerSec, 1000);
 //INFOBOX - Wyświetla daną wiadomość w oknie
 let infoboxTimeout;
 function infobox(_info) {
-  if (infoboxTimeout!=undefined) clearTimeout(infoboxTimeout);
+  if (infoboxTimeout != undefined) clearTimeout(infoboxTimeout);
   document.querySelector("#infobox").innerHTML = _info;
   document.querySelector("#infobox").classList.add("infoboxblink");
-  infoboxTimeout = setTimeout(function(){
+  infoboxTimeout = setTimeout(function() {
     document.querySelector("#infobox").classList.remove("infoboxblink");
   }, 1500);
 }
 
+// OSIAGNIECIA
 
+function addAchievement(achNumber) {
+  let achSection = document.querySelector("#achievements");
 
+  var div = document.createElement("div");
+  var icon = document.createElement("div");
+  var title = document.createElement("h2");
+  title.innerText = "Tytuł Osiągnięcia!";
+  var spanLine = document.createElement("hr");
+  var description = document.createElement("h3");
+  description.innerText = "Opis Osiągnięcia, może być nieco dłuższy(2 linijki)";
 
+  icon.classList.add("achievement-icon");
+  div.classList.add("achievement");
 
+  div.append(icon);
+  div.append(title);
+  div.append(spanLine);
+  div.append(description);
+  achSection.appendChild(div);
+}
 
-
-
-
-
-
-
-
-
-
-
-
+addAchievement();
+addAchievement();
+addAchievement();
+addAchievement();
+addAchievement();
 
 //END

@@ -1,96 +1,108 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Energy Clicker</title>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="main-style.css">
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="main-style.css" />
   </head>
   <body>
-  <div id="bodyIn">
-    <div class="game">
+    <div id="bodyIn">
+      <div class="game">
+        <h1>Witaj w grze ENERGY CLICKER!!!</h1>
+        <b><div id="infobox" class="">Potrzebujesz więcej energii</div></b>
+        <div class="lewy">
+          <div class="top">
+            <h2>Generator</h2>
+          </div>
 
-    <h1>Witaj w grze ENERGY CLICKER!!!</h1>
-    <b><div id="infobox" class="">Potrzebujesz więcej energii</div></b>
-    <div class="lewy">
+          <div class="divEnergia">
+            <h2>
+              <b><span class="energia">0</span></b> Wh
+            </h2>
+          </div>
+          (+<span id="perClick">1</span> na klik) (+<span id="perSec">0</span>
+          na sekundę)<br /><br />
+          <div class="generator2">
+            <button
+              title="Zakręć Korbą generatora by otrzymać Energię"
+              class="generator"
+              onclick="klik()"
+            ></button
+            ><br />
+          </div>
 
-      <div class="top">
-        <h2>Generator</h2>
+          <!-- NOTE: Ulepszenia, generator ręczny -->
+
+          Kup ulepszenie do generatora ręcznego: <br /><br />
+
+          Lepsza korba daje +1 do klikania<br />
+          <button type="button" name="button" onClick="kupLepszaKorba()">
+            Lepsza korba(koszt
+            <span id="iloscKosztKorby">10</span>
+            Wh):
+            <span id="iloscKorb">0</span></button
+          ><br /><br />
+
+          Lepszy generator daje +10 do klikania<br />
+          <button type="button" name="button" onClick="kupLepszyGen()">
+            Lepszy generator(koszt
+            <span id="kosztGen">100</span>
+            Wh):
+            <span id="iloscGen">0</span></button
+          ><br /><br />
+        </div>
+        <div class="srodkowy">
+          <div class="top">
+            <h2>Elektrownia</h2>
+          </div>
+          <img id="factory" src="img/Factory.png" alt="" />
+          <div class="achievements-section">
+            <div class="top" style="margin-top: 5px;">
+              <h2>Osiągnięcia</h2>
+            </div>
+            <div id="achievements"></div>
+          </div>
+        </div>
+        <div class="prawy">
+          <div class="top">
+            <h2>Ulepszenia</h2>
+          </div>
+          <br />
+
+          <!-- NOTE: Ulepszenia, elektrownia -->
+
+          <button type="button" name="button" onClick="kupMalyGenWodny()">
+            Turbina wiatrowa: <span id="iloscGenWod">0</span><br />
+            Koszt: <span id="kosztMalyGenWod">10</span> Wh</button
+          ><br /><br />
+
+          <button type="button" name="button" onClick="kupMalyGenWiatrowy()">
+            Panele słoneczne: <span id="iloscGenWiat">0</span><br />
+            Koszt: <span id="kosztMalyGenWiat">100</span> Wh</button
+          ><br /><br />
+
+          <button type="button" name="button" onClick="kupGenWegiel()">
+            Generator na węgiel: <span id="iloscGenWegiel">0</span><br />
+            Koszt: <span id="kosztGenWegiel">100</span> Wh</button
+          ><br /><br />
+
+          <button type="button" name="button" onClick="kupZapora()">
+            Generator wodny przy zaporze: <span id="iloscZapora">0</span><br />
+            Koszt: <span id="kosztZapora">100</span> Wh</button
+          ><br /><br />
+
+          <button type="button" name="button" onClick="kupAtom()">
+            Reaktor atomowy: <span id="iloscAtom">0</span><br />
+            Koszt: <span id="kosztAtom">100</span> Wh</button
+          ><br /><br />
+        </div>
+        <div style="clear:both;"></div>
       </div>
-
-      <div class="divEnergia">
-        <h2><b><span class="energia">0</span></b> Wh</h2>
-      </div>
-      (+<span id="perClick">1</span> na klik) (+<span id="perSec">0</span> na sekundę)<br /><br>
-      <div class="generator2">
-        <button title="Zakręć Korbą generatora by otrzymać Energię" class="generator" onclick="klik()"></button><br>
-      </div>
-
-      <!-- NOTE: Ulepszenia, generator ręczny -->
-
-      Kup ulepszenie do generatora ręcznego: <br><br>
-
-      Lepsza korba daje +1 do klikania<br>
-      <button type="button" name="button" onClick="kupLepszaKorba()">
-        Lepsza korba(koszt
-        <span id="iloscKosztKorby">10</span>
-        Wh):
-        <span id="iloscKorb">0</span>
-      </button><br><br>
-
-      Lepszy generator daje +10 do klikania<br>
-      <button type="button" name="button" onClick="kupLepszyGen()">
-        Lepszy generator(koszt
-        <span id="kosztGen">100</span>
-        Wh):
-        <span id="iloscGen">0</span>
-      </button><br><br>
-
+      <script type="text/javascript" src="main.js"></script>
     </div>
-    <div class="srodkowy">
-      <div class="top">
-        <h2>Elektrownia</h2>
-      </div>
-      <img id="factory" src="img/Factory.png" alt="">
-    </div>
-    <div class="prawy">
-
-      <div class="top">
-        <h2>Ulepszenia</h2>
-      </div><br>
-
-
-      <!-- NOTE: Ulepszenia, elektrownia -->
-
-      <button type="button" name="button" onClick="kupMalyGenWodny()">
-        Turbina wiatrowa: <span id="iloscGenWod">0</span><br>
-        Koszt: <span id="kosztMalyGenWod">10</span> Wh
-      </button><br><br>
-
-      <button type="button" name="button" onClick="kupMalyGenWiatrowy()">
-        Panele słoneczne: <span id="iloscGenWiat">0</span><br>
-        Koszt: <span id="kosztMalyGenWiat">100</span> Wh
-      </button><br><br>
-
-      <button type="button" name="button" onClick="kupGenWegiel()">
-        Generator na węgiel: <span id="iloscGenWegiel">0</span><br>
-        Koszt: <span id="kosztGenWegiel">100</span> Wh
-      </button><br><br>
-
-      <button type="button" name="button" onClick="kupZapora()">
-        Generator wodny przy zaporze: <span id="iloscZapora">0</span><br>
-        Koszt: <span id="kosztZapora">100</span> Wh
-      </button><br><br>
-
-      <button type="button" name="button" onClick="kupAtom()">
-        Reaktor atomowy: <span id="iloscAtom">0</span><br>
-        Koszt: <span id="kosztAtom">100</span> Wh
-      </button><br><br>
-
-    </div>
-    <div style="clear:both;"></div>
-    </div>
-    <script type="text/javascript" src="main.js"></script>
-  </div>
   </body>
 </html>
