@@ -1,0 +1,14 @@
+{
+  "array": [
+    {
+      "icon": "10wh.png",
+      "title": "Początki",
+      "description": "Zdobądź 10 Wh"
+    },
+    {
+      "icon": "name.png",
+      "title": "tytuł",
+      "description": "opis"
+    }
+  ]
+}
