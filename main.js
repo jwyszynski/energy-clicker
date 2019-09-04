@@ -150,6 +150,7 @@ function kupAtom() {
 
 setInterval(odswiez, 100);
 setInterval(addPerSec, 1000);
+setInterval(checkAchievements, 1000);
 
 //INFOBOX - Wyświetla daną wiadomość w oknie
 let infoboxTimeout;
@@ -162,7 +163,50 @@ function infobox(_info) {
   }, 1500);
 }
 
-// OSIAGNIECIA
+////////////////////////////////////////
+// Achievements
+////////////////////////////////////////
+
+function for_2_Achievement() {
+  let wynik = 0;
+  if (malyGeneratorWiatrowy > 0) wynik++;
+  if (malyGeneratorWodny > 0) wynik++;
+  if (genWegiel > 0) wynik++;
+  if (zapora > 0) wynik++;
+  if (atom > 0) wynik++;
+  if (wynik >= 2) return true;
+  return false;
+}
+
+function checkAchievements(params) {
+  let conditions = [];
+  conditions[0] = achievements.Table[0].used != true && energia >= 10;
+  conditions[1] =
+    achievements.Table[1].used != true &&
+    (malyGeneratorWiatrowy > 0 ||
+      malyGeneratorWodny > 0 ||
+      zapora > 0 ||
+      atom > 0);
+  conditions[2] =
+    achievements.Table[2].used != true && for_2_Achievement() == true;
+  conditions[3] = achievements.Table[3].used != true && atom >= 3;
+  conditions[4] =
+    achievements.Table[4].used != true && (lepszaKorba > 0 || lepszyGen > 0);
+  conditions[5] =
+    achievements.Table[5].used != true && malyGeneratorWodny >= 100;
+  conditions[6] =
+    achievements.Table[6].used != true && malyGeneratorWodny >= 10000;
+  conditions[7] = achievements.Table[7].used != true && genWegiel > 0;
+  conditions[8] = achievements.Table[8].used != true && genWegiel >= 1000;
+  conditions[9] = achievements.Table[9].used != true && zapora > 0;
+
+  for (let i = 0; i < conditions.length; i++) {
+    if (conditions[i]) {
+      addAchievement(i);
+      achievements.Table[i].used = true;
+    }
+  }
+}
 
 function addAchievement(achNumber) {
   let achSection = document.querySelector("#achievements");
@@ -170,25 +214,21 @@ function addAchievement(achNumber) {
   var div = document.createElement("div");
   var icon = document.createElement("div");
   var title = document.createElement("h2");
-  title.innerText = "Tytuł Osiągnięcia!";
+  title.innerText = achievements.Table[achNumber].title;
   var spanLine = document.createElement("hr");
   var description = document.createElement("h3");
-  description.innerText = "Opis Osiągnięcia, może być nieco dłuższy(2 linijki)";
+  description.innerText = achievements.Table[achNumber].description;
 
   icon.classList.add("achievement-icon");
+  icon.style.backgroundImage =
+    'url("img/achievements/' + achievements.Table[achNumber].icon + '")';
   div.classList.add("achievement");
 
   div.append(icon);
   div.append(title);
   div.append(spanLine);
   div.append(description);
-  achSection.appendChild(div);
+  achSection.prepend(div);
 }
-
-addAchievement();
-addAchievement();
-addAchievement();
-addAchievement();
-addAchievement();
 
 //END
