@@ -7,7 +7,7 @@ Autor: Jakub Wyszyński
 
 ## DEMO:
 
-Wypróbować można na mojej stronie:  [http://info.wsisiz.edu.pl/~wyszynsj/Energy-clicker/](http://info.wsisiz.edu.pl/~wyszynsj/Energy-clicker/)
+Wypróbować można na mojej stronie:  [https://info.wsisiz.edu.pl/~wyszynsj/energy-clicker/](https://info.wsisiz.edu.pl/~wyszynsj/energy-clicker/)
 
 ## O czym to?
 
