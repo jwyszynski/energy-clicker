@@ -2,6 +2,7 @@
 # ENERGY CLICKER
 
 Prosta gra napisana w JAVASCRIPT HTML i CSS
+
 Autor: Jakub Wyszyński
 
 ## DEMO:
