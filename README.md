@@ -16,3 +16,6 @@ Wcielamy się w właściciela elektrowni, który buduje swoje energetyczne imper
 ## Instrukcja
 
 ![enter image description here](https://i.imgur.com/XCa6vFK.png)
+
+## TODO
+Przystosować interfejs do urządzeń mobilnych(RWD)
